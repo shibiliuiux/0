@@ -1,0 +1,614 @@
+/* ===============================
+   GLOBAL FLUID SETTINGS
+================================= */
+
+html {
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    padding: clamp(1rem, 4vw, 2rem);
+}
+
+/* ===============================
+   FLEXIBLE GRID SYSTEMS
+================================= */
+
+.services {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Work items fix */
+@media (max-width: 768px) {
+    .work-grid {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .work-item,
+    .left-item,
+    .right-item {
+        width: 100%;
+        max-width: 100%;
+        align-self: center;
+        perspective: none;
+        margin-top: 0;
+    }
+
+    .work-item:hover .work-img-container {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ===============================
+   TYPOGRAPHY SCALING
+================================= */
+
+.huge-title {
+    font-size: clamp(3rem, 10vw, 8.5rem);
+}
+
+.heading-large {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 12vw, 4.5rem);
+}
+
+.hero p {
+    font-size: clamp(1.15rem, 4vw, 1.15rem);
+}
+
+/* ===============================
+   NAVBAR (MOBILE READY)
+================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        grid-template-columns: auto auto;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 5%;
+        width: min(220px, 80vw);
+        flex-direction: column;
+        background: #0c0c0c;
+        padding: 1rem;
+        border-radius: 12px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    body.light-mode .nav-links {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ===============================
+   ABOUT PAGE FIX
+================================= */
+
+@media (max-width: 1024px) {
+    .about-hero {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .about-desc {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        margin-top: 5vh;
+        gap: 1.5rem;
+    }
+
+    .about-hero .huge-title {
+        font-size: 25vw;
+        line-height: 1;
+    }
+
+    .about-desc {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .about-desc p {
+        font-size: clamp(1.4rem, 6vw, 2rem);
+        text-align: justify;
+        text-justify: inter-word;
+        margin-top: 2rem;
+    }
+}
+
+/* ===============================
+   CONTACT PAGE FIX
+================================= */
+
+@media (max-width: 1024px) {
+
+    .contact-details-section {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-huge {
+        font-size: 28vw;
+    }
+}
+
+/* ===============================
+   WORK PAGE FIX
+================================= */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    .container {
+        overflow-x: hidden;
+    }
+
+    .circular-work-section {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .work-hero .huge-title {
+        font-size: clamp(3rem, 15vw, 8.5rem);
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* ===============================
+   EXPERIENCE SECTION
+================================= */
+
+@media (max-width: 768px) {
+
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .exp-role,
+    .exp-date {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===============================
+   CIRCULAR GALLERY FIX
+================================= */
+
+.circular-gallery-container {
+    width: clamp(200px, 70vw, 320px);
+    height: auto;
+    aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 480px) {
+    .circular-gallery-container {
+        /* Use zoom instead of scale to maintain pixel-perfect image rasterization on Webkit */
+        zoom: 0.85;
+        transform: scale(1);
+    }
+}
+
+/* ===============================
+   FOOTER FIX
+================================= */
+
+@media (max-width: 768px) {
+
+    .footer-marquee {
+        margin-bottom: 4rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .massive-text {
+        font-size: 18vw;
+        line-height: 1;
+        margin-left: 0;
+    }
+
+    .slide-action-btn {
+        width: 100%;
+        max-width: 360px;
+        height: 70px;
+        margin-top: 1rem;
+    }
+
+    .slide-text {
+        font-size: 1.15rem;
+    }
+
+    .slide-thumb {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+    }
+}
+
+/* ===============================
+   BUTTON + TOUCH OPTIMIZATION
+================================= */
+
+button,
+a {
+    min-height: 44px;
+}
+
+/* ===============================
+   SMALL MOBILE (≤480px)
+================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+
+    .contact-intro {
+        font-size: 1.5rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+}
+
+/* ===============================
+   GLOBAL SPACING FIXES (MOBILE)
+================================= */
+@media (max-width: 768px) {
+
+    .experience-section,
+    .about-vision,
+    .contact-details-section {
+        margin-top: 5rem !important;
+        margin-bottom: 3rem !important;
+    }
+
+    .experience-header {
+        margin-bottom: 3rem !important;
+    }
+
+    .experience-item {
+        padding: 2.5rem 0 !important;
+    }
+
+    .footer-bottom {
+        margin-top: 4rem !important;
+    }
+
+    .hero,
+    .work-hero {
+        margin-bottom: 4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .experience-section,
+    .about-vision,
+    .contact-details-section {
+        margin-top: 3.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .experience-header {
+        margin-bottom: 2rem !important;
+    }
+
+    .experience-item {
+        padding: 2rem 0 !important;
+    }
+
+    .container {
+        padding: 1.25rem !important;
+        /* Slightly tighter on small phones */
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 1.25rem;
+    }
+}
+
+/* ===============================
+   PERFORMANCE & LAG FIXES 
+================================= */
+
+@media (max-width: 768px) {
+    /* AGGRESSIVE PERFORMANCE & LAG FIXES FOR MOBILE */
+
+    /* 1. Remove expensive background gradients to drastically boost FPS on mobile */
+    body {
+        background-image: none !important;
+        background-color: #030303 !important;
+        background-attachment: scroll !important;
+    }
+
+    body.light-mode {
+        background-image: none !important;
+        background-color: #f8fafc !important;
+        background-attachment: scroll !important;
+    }
+
+    /* 2. Hide heavy animated gradient overlays */
+    .glow-bg {
+        display: none !important;
+    }
+
+    /* 3. Optimize heavy box shadows which lag layout rendering */
+    .vision-img-frame,
+    .gallery-item .img-wrapper {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* Removed backface-visibility on parent gallery-item to prevent aggressive hardware acceleration blur; implemented directly on img in style.css for exact quality */
+
+    /* 4. Optimize card flip performance by removing backdrop filters */
+    .card-front,
+    .card-back {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    body.light-mode .card-front {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    body.light-mode .card-back {
+        background: #f8fafc !important;
+    }
+
+    /* 5. Card Flip Logic strictly constrained on Mobile */
+    .card:hover .card-inner {
+        transform: none !important;
+    }
+
+    .card.flipped .card-inner {
+        transform: translateY(-8px) rotateY(180deg) !important;
+    }
+
+    /* Neutralize interfering child hover animations that glitch the 3D matrix on tap */
+    .card:hover .card-image img {
+        transform: none !important;
+    }
+
+    .card:hover .card-front {
+        box-shadow: none !important;
+    }
+
+    body.light-mode .card:hover .card-front {
+        box-shadow: none !important;
+    }
+
+    /* Fix translucent image bleed-through hitting back of card on iOS Webkit */
+    .card-front *,
+    .card-back * {
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+    }
+
+    .card.flipped .card-image img,
+    .card.flipped .card-content {
+        opacity: 0 !important;
+        transition: opacity 0.2s ease !important;
+    }
+
+    body.light-mode .card.flipped .card-image img,
+    body.light-mode .card.flipped .card-content {
+        opacity: 0 !important;
+    }
+
+    .card:not(.flipped) .card-image img,
+    .card:not(.flipped) .card-content {
+        transition: opacity 0.4s ease 0.3s !important;
+    }
+
+    .card:not(.flipped) .card-back h3,
+    .card:not(.flipped) .card-back p {
+        opacity: 0 !important;
+        transition: opacity 0.2s ease !important;
+    }
+
+    body.light-mode .card:not(.flipped) .card-back h3,
+    body.light-mode .card:not(.flipped) .card-back p {
+        opacity: 0 !important;
+    }
+
+    .card.flipped .card-back h3,
+    .card.flipped .card-back p {
+        transition: opacity 0.4s ease 0.3s !important;
+    }
+
+    /* 6. Visibility Fixes for Hero Text */
+    .hero p {
+        color: #ffffff !important;
+        /* Extremely bright for dark background */
+        font-weight: 400 !important;
+        opacity: 1 !important;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 1) !important;
+        letter-spacing: 0.02em;
+    }
+
+    body.light-mode .hero p {
+        color: #0f172a !important;
+        /* Very dark slate for light background */
+        font-weight: 500 !important;
+        text-shadow: none !important;
+    }
+
+    /* 7. Strip blur animations that cause stutter on entry */
+    .blur-char,
+    .blur-word {
+        filter: none !important;
+        -webkit-filter: none !important;
+        transform: none !important;
+    }
+
+    /* Prevent memory limits and crashes from too many will-change layers */
+    .card-inner,
+    .work-img-container,
+    .work-img-container img,
+    .btn-secondary,
+    .card-front {
+        will-change: auto !important;
+    }
+
+    /* Neutralize stuck hover states on mobile for buttons */
+    .btn-secondary:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        background-color: #1a1a1a !important;
+        color: #d0d0d0 !important;
+    }
+
+    .btn-secondary:active {
+        transform: translateY(2px) !important;
+        background-color: #333 !important;
+        transition: all 0.1s !important;
+    }
+
+    /* Hardware Compositing for Floated Icons on Mobile */
+    .floating-img {
+        -webkit-transform-style: preserve-3d !important;
+        transform-style: preserve-3d !important;
+        -webkit-backface-visibility: hidden !important;
+        backface-visibility: hidden !important;
+        will-change: transform !important;
+    }
+
+    /* 8. Ultra Premium Contact Section Box (Mobile Only Padding) */
+    .contact-details-section {
+        padding: 3rem 1.75rem !important;
+    }
+
+    .contact-intro {
+        font-size: 1.25rem !important;
+        line-height: 1.6;
+        margin-bottom: 2.5rem !important;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        background: #111112 !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+        border-radius: 16px !important;
+        padding: 1.35rem 1.2rem !important;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+        color: #ffffff !important;
+        font-size: 1rem;
+    }
+
+    body.light-mode .contact-form input,
+    body.light-mode .contact-form textarea {
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.03) !important;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+        color: #0f172a !important;
+    }
+
+    .submit-btn {
+        border-radius: 16px !important;
+        height: 60px;
+        font-size: 1.1rem !important;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-top: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    body.light-mode .submit-btn {
+        box-shadow: 0 10px 20px rgba(90, 20, 180, 0.2) !important;
+    }
+}
+
+/* ===============================
+   MOBILE PAGE TRANSITION (DISSOLVE)
+================================= */
+@media (max-width: 768px) {
+    body {
+        animation: mobilePageLoad 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    body.page-leaving {
+        animation: mobilePageLeave 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
+    }
+
+    @keyframes mobilePageLoad {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes mobilePageLeave {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+}

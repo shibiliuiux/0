@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Up - Case Study</title>
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="HelpUp is a digital platform designed to connect users with trusted local helpers.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Group 1.png" type="image/x-icon">
+    <style>
+        .case-study-hero {
+            text-align: center;
+            margin-top: 15vh;
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .case-desc {
+            max-width: 900px;
+            margin: 0 auto 5rem auto;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #b0b0b0;
+            font-weight: 300;
+        }
+        body.light-mode .case-desc,
+        body.light-mode .case-desc p {
+            color: #111111;
+        }
+        .case-images {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            width: 100%;
+            padding-bottom: 5rem;
+        }
+        @media (max-width: 1024px) {
+            .case-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .case-images {
+                grid-template-columns: 1fr;
+            }
+        }
+        .case-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Removed conflicting transform transition to let scroll-float animation handle it */
+            transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity, box-shadow;
+        }
+        .case-images img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" aria-label="Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="case-study-hero">
+            <h1 class="huge-title shiny-text">HELP UP</h1>
+        </section>
+        
+        <div class="case-desc">
+            <p>HelpUp is a digital platform designed to connect users with trusted local helpers for handling everyday tasks with speed and convenience, transforming the way people manage daily responsibilities by offering a seamless, reliable, and user-friendly experience where finding, booking, and communicating with verified helpers becomes quick and effortless, ultimately saving time while building trust within the local community.</p>
+        </div>
+
+        <section class="case-images">
+            <img src="help%20up/help%201.png" alt="Help Up Design 1" class="scroll-float">
+            <img src="help%20up/help%202.png" alt="Help Up Design 2" class="scroll-float">
+            <img src="help%20up/help%203.png" alt="Help Up Design 3" class="scroll-float">
+            <img src="help%20up/help%204.png" alt="Help Up Design 4" class="scroll-float">
+            <img src="help%20up/help%205.png" alt="Help Up Design 5" class="scroll-float">
+            <img src="help%20up/help%206.png" alt="Help Up Design 6" class="scroll-float">
+            <img src="help%20up/help%207.png" alt="Help Up Design 7" class="scroll-float">
+            <img src="help%20up/help%208.png" alt="Help Up Design 8" class="scroll-float">
+            <img src="help%20up/help%209.png" alt="Help Up Design 9" class="scroll-float">
+            <img src="help%20up/help%2010.png" alt="Help Up Design 10" class="scroll-float">
+            <img src="help%20up/help%2011.png" alt="Help Up Design 11" class="scroll-float">
+            <img src="help%20up/help%2012.png" alt="Help Up Design 12" class="scroll-float">
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-marquee">
+            <h2 class="massive-text">let's connect</h2>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3><span class="text-gray">Ready to create something</span><br><strong>awesome together?</strong>
+                    </h3>
+                    <div class="slide-action-btn">
+                        <div class="slide-track">
+                            <span class="slide-text">Slide to contact</span>
+                            <div class="slide-thumb">&rarr;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <span class="column-title">Pages</span>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <span class="column-title">Socials</span>
+                        <ul>
+                            <li><a href="https://wa.me/919497440438?text=Hello" target="_blank"
+                                    rel="noopener noreferrer">Whatsapp</a></li>
+                            <li><a href="https://instagram.com/shibilipalakkal_" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://github.com/shibiliaicreator-glitch/portfolio" target="_blank"
+                                    rel="noopener noreferrer">Github</a></li>
+                            <li><a href="https://www.linkedin.com/jobs/" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Shibili copy rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+
+        const currentTheme = sessionStorage.getItem('theme');
+        if (currentTheme === 'light-mode') {
+            document.body.classList.add('light-mode');
+            updateThemeIcon();
+        }
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.add('theme-transitioning');
+            document.body.classList.toggle('light-mode');
+
+            let theme = 'dark-mode';
+            if (document.body.classList.contains('light-mode')) {
+                theme = 'light-mode';
+            }
+
+            sessionStorage.setItem('theme', theme);
+            updateThemeIcon();
+
+            setTimeout(() => {
+                document.body.classList.remove('theme-transitioning');
+            }, 600);
+        });
+
+        function updateThemeIcon() {
+            if (document.body.classList.contains('light-mode')) {
+                themeIcon.textContent = '☀️';
+            } else {
+                themeIcon.textContent = '🌙';
+            }
+        }
+
+        // Hide Navbar when Footer is visible
+        const stickyNavbar = document.querySelector('.navbar');
+        const footerSection = document.querySelector('.footer-section');
+
+        if (stickyNavbar && footerSection) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        stickyNavbar.classList.add('navbar-hidden');
+                    } else {
+                        stickyNavbar.classList.remove('navbar-hidden');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            footerObserver.observe(footerSection);
+        }
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Slide to Connect Logic
+        document.querySelectorAll('.slide-action-btn').forEach(btn => {
+            const thumb = btn.querySelector('.slide-thumb');
+            const text = btn.querySelector('.slide-text');
+            let isDragging = false;
+            let startX = 0;
+            let maxTranslate = btn.clientWidth - thumb.clientWidth - 12; // 6px padding both sides
+            let currentTranslate = 0;
+
+            const handleStart = (e) => {
+                isDragging = true;
+                startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                thumb.style.transition = 'none';
+                text.style.transition = 'none';
+            };
+
+            const handleMove = (e) => {
+                if (!isDragging) return;
+                let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                let diff = clientX - startX;
+                currentTranslate = Math.max(0, Math.min(diff, maxTranslate));
+                thumb.style.transform = `translateX(${currentTranslate}px)`;
+
+                let progress = currentTranslate / maxTranslate;
+                text.style.opacity = 1 - progress;
+                text.style.filter = `blur(${progress * 10}px)`;
+
+                if (currentTranslate >= maxTranslate - 5) {
+                    isDragging = false;
+                    btn.classList.add('success');
+                    document.body.classList.add('page-leaving');
+                    setTimeout(() => {
+                        window.location.href = 'contact.html';
+                    }, 400);
+                }
+            };
+
+            const handleEnd = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                thumb.style.transition = 'transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                text.style.transition = 'opacity 0.4s ease, filter 0.4s ease';
+                if (currentTranslate < maxTranslate - 5) {
+                    currentTranslate = 0;
+                    thumb.style.transform = `translateX(0px)`;
+                    text.style.opacity = 1;
+                    text.style.filter = `blur(0px)`;
+                }
+            };
+
+            thumb.addEventListener('mousedown', handleStart);
+            thumb.addEventListener('touchstart', handleStart, { passive: true });
+            window.addEventListener('mousemove', handleMove);
+            window.addEventListener('touchmove', handleMove, { passive: true });
+            window.addEventListener('mouseup', handleEnd);
+            window.addEventListener('touchend', handleEnd);
+        });
+
+        // Page Transition Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const target = this.getAttribute('href');
+                    if (target.startsWith('http') || target.startsWith('#') || target === '') return;
+                    if (this.getAttribute('target') === '_blank') return;
+                    e.preventDefault();
+                    document.body.classList.add('page-leaving');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                });
+            });
+        });
+
+        // Scroll Float Animation
+        const scrollFloatElements = document.querySelectorAll('.scroll-float');
+        if (scrollFloatElements.length > 0) {
+            const scrollFloatObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, (index % 3) * 100); 
+                        scrollFloatObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            scrollFloatElements.forEach((el) => scrollFloatObserver.observe(el));
+        }
+
+        // Blur Text Animation for Description (Word by Word)
+        const caseDescP = document.querySelector('.case-desc p');
+        if (caseDescP) {
+            const text = caseDescP.innerHTML.trim();
+            const words = text.split(/\s+/);
+            caseDescP.innerHTML = '';
+            const allBlurWords = [];
+
+            words.forEach((word, index) => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'blur-char'; 
+                wordSpan.innerHTML = word;
+                wordSpan.style.animationDelay = `${index * 0.04}s`; 
+
+                allBlurWords.push(wordSpan);
+                caseDescP.appendChild(wordSpan);
+
+                if (index < words.length - 1) {
+                    caseDescP.appendChild(document.createTextNode(' '));
+                }
+            });
+
+            setTimeout(() => {
+                allBlurWords.forEach(w => w.classList.add('animate'));
+            }, 300);
+        }
+    </script>
+</body>
+</html>

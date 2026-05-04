@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work - shibilipalakkal</title>
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="View selected work and case studies.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Group 1.png" type="image/x-icon">
+    <link rel="preload" as="image" href="assets1/mockup 3.png">
+    <link rel="preload" as="image" href="assets1/feature 1.png">
+    <link rel="preload" as="image" href="assets1/enroll 1.png">
+    <link rel="preload" as="image" href="assets1/workout.avif">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" aria-label="Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+
+    <main class="container">
+        <header class="work-hero">
+            <h1 class="huge-title">
+                <span class="text-gray shiny-text-gray">SELECTED</span><br>
+                <span class="shiny-text">WORK</span>
+            </h1>
+        </header>
+        <section class="selected-work container" style="margin-top: 5rem;">
+            <div class="section-header">
+                <span class="subheading">Works</span>
+                <h2 class="heading-large">App Designs</h2>
+
+                <section class="selected-work circular-work-section">
+                    <div class="circular-gallery-container">
+                        <div class="circular-gallery-cylinder" id="gallery-cylinder">
+                            <div class="gallery-item" style="--i: 0;">
+                                <div class="img-wrapper"><img src="assets1/mockup 3.png" alt="Guidy"></div>
+                                <p>Workout tracker</p>
+                            </div>
+                            <div class="gallery-item" style="--i: 1;">
+                                <div class="img-wrapper"><img src="assets1/feature 1.png" alt="Feature"></div>
+                                <p>Wellness tracking</p>
+                            </div>
+                            <div class="gallery-item" style="--i: 2;">
+                                <div class="img-wrapper"><img src="assets1/enroll 1.png" alt="Enroll"></div>
+                                <p>Workout tracker</p>
+                            </div>
+                            <div class="gallery-item" style="--i: 3;">
+                                <div class="img-wrapper"><img src="assets1/workout.avif" alt="Arc"
+                                        style="transform: translateZ(0) scale(1.2); -webkit-transform: translateZ(0) scale(1.2);">
+                                </div>
+                                <p>Wellness tracking</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="selected-work container" style="margin-top: 5rem;">
+                    <div class="section-header">
+                        <span class="subheading">Other Works</span>
+                        <h2 class="heading-large">Websites</h2>
+                    </div>
+
+                    <div class="work-grid">
+                        <!-- Item 1 -->
+                        <div class="work-item left-item">
+                            <div class="work-img-container">
+                                <img src="assets3/refined 1.png" alt="Guidy mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Mondly</h3>
+                                    <p>Dashboard UI Concept.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop - 1.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="work-item right-item">
+                            <div class="work-img-container">
+                                <img src="assets3/mockup33.png" alt="Feature mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Primo</h3>
+                                    <p>Product Landing Experience.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/MacBook Pro 16_ - 1.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="work-item left-item">
+                            <div class="work-img-container">
+                                <img src="assets3/mockup 43.png" alt="Refined mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Digital Banking</h3>
+                                    <p>UI Landing Concept.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop - 2.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="work-item right-item">
+                            <div class="work-img-container">
+                                <img src="assets3/mockup35.png" alt="Enroll mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Reen</h3>
+                                    <p>Frontend Website Demo Project. Website coding demo.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop 3.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="work-item left-item">
+                            <div class="work-img-container">
+                                <img src="assets3/Mockup 13.png" alt="Arc mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>RACE Logistics</h3>
+                                    <p>UI Redesign. Conceptual UI & Website coding demo.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop - 5.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div class="work-item right-item">
+                            <div class="work-img-container">
+                                <img src="assets3/Mockup Ribbon 2.png" alt="Essence mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Connect</h3>
+                                    <p>Frontend Demo. Website coding demo.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop6.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 7 -->
+                        <div class="work-item left-item">
+                            <div class="work-img-container">
+                                <img src="assets3/Mockup Scene 4.png" alt="Design System mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Logistics Services UI</h3>
+                                    <p>Frontend Demo. Website coding demo.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop7.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 8 -->
+                        <div class="work-item right-item">
+                            <div class="work-img-container">
+                                <img src="assets3/Mockup 22.png" alt="Design System mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Industry Services Layout</h3>
+                                    <p>Bootstrap Row & Column Demo. Website coding demo.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop8.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 9 -->
+                        <div class="work-item left-item">
+                            <div class="work-img-container">
+                                <img src="assets3/Mockup 25.png" alt="Project 9 mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Healtrust</h3>
+                                    <p>Real Website Project. Designed, developed.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop9.png">View</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 10 -->
+                        <div class="work-item right-item">
+                            <div class="work-img-container">
+                                <img src="assets3/Mockup Scene 5.png" alt="Project 10 mockup">
+                            </div>
+                            <div class="work-info">
+                                <div class="work-text">
+                                    <h3>Decor</h3>
+                                    <p>Real Website Project. Designed, developed.</p>
+                                </div>
+                                <a href="#" class="btn-secondary lightbox-trigger"
+                                    data-img="assets2/Desktop10.png">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-marquee">
+            <h2 class="massive-text">let's connect</h2>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3><span class="text-gray">Ready to create something</span><br><strong>awesome together?</strong>
+                    </h3>
+                    <div class="slide-action-btn">
+                        <div class="slide-track">
+                            <span class="slide-text">Slide to contact</span>
+                            <div class="slide-thumb">&rarr;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <span class="column-title">Pages</span>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <span class="column-title">Socials</span>
+                        <ul>
+                            <li><a href="https://wa.me/919497440438?text=Hello" target="_blank"
+                                    rel="noopener noreferrer">Whatsapp</a></li>
+                            <li><a href="https://instagram.com/shibilipalakkal_" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://github.com/shibiliaicreator-glitch/portfolio" target="_blank"
+                                    rel="noopener noreferrer">Github</a></li>
+                            <li><a href="https://www.linkedin.com/jobs/" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Shibili copy rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
