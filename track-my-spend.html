@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track My Spend - Case Study Overview</title>
+    <meta name="color-scheme" content="dark">
+    <meta name="description"
+        content="Select perspective to explore Track My Spend: UX (Wireframes & Flows) or UI (High-fidelity mockups).">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Group 1.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Floating Back Button -->
+    <a href="index.html#case-study" class="split-back-btn" aria-label="Back to Home">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+
+    <div class="split-container">
+        <!-- UX Column Panel -->
+        <a href="track-my-spend-ux.html" class="split-panel split-ux-panel">
+            <div class="split-content">
+                <h2>UX Research</h2>
+                <span class="split-btn">Explore UX Details &rarr;</span>
+            </div>
+        </a>
+
+        <!-- UI Column Panel -->
+        <a href="track-my-spend-ui.html" class="split-panel split-ui-panel">
+            <div class="split-content">
+                <h2>UI Design</h2>
+                <span class="split-btn">Explore UI Details &rarr;</span>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        // Sync Theme from Session Storage
+        const currentTheme = sessionStorage.getItem('theme');
+        if (currentTheme === 'light-mode') {
+            document.body.classList.add('light-mode');
+        }
+
+        // Page transition fade
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const target = this.getAttribute('href');
+                    if (target.startsWith('http') || target.startsWith('#') || target === '') return;
+                    e.preventDefault();
+                    document.body.classList.add('page-leaving');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

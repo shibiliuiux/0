@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - shibilipalakkal</title>
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Get in touch with Shibili.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Group 1.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" aria-label="Home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <button id="theme-toggle" aria-label="Toggle Theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="contact-hero">
+            <h1 class="huge-title contact-huge">
+                <span class="text-gray shiny-text-gray get-in-text">GET IN</span>
+                <span class="shiny-text touch-text">TOUCH</span>
+            </h1>
+        </section>
+
+        <section class="contact-details-section">
+            <div class="contact-info">
+                <p class="contact-intro">Whether you have a question, want to work together, or simply wish to say
+                    hello, I'm all ears.</p>
+
+                <div class="info-block">
+                    <span class="info-label">Business Inquiries</span>
+                    <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=shibiliaicreator@gmail.com"
+                        target="_blank" rel="noopener noreferrer" class="info-value">shibiliaicreator@gmail.com</a>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-block">
+                        <span class="info-label">LinkedIn</span>
+                        <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer"
+                            class="info-value">shibilipalakkal</a>
+                    </div>
+                    <div class="info-block">
+                        <span class="info-label">Phone number</span>
+                        <a href="tel:+919497440438" class="info-value">+919497440438</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="ca9a5b0f-5ff0-4806-9816-0576cae013e3">
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-marquee">
+            <h2 class="massive-text">let's connect</h2>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3><span class="text-gray">Ready to create something</span><br><strong>awesome together?</strong>
+                    </h3>
+                    <div class="slide-action-btn">
+                        <div class="slide-track">
+                            <span class="slide-text">Slide to contact</span>
+                            <div class="slide-thumb">&rarr;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <span class="column-title">Pages</span>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <span class="column-title">Socials</span>
+                        <ul>
+                            <li><a href="https://wa.me/919497440438?text=Hello" target="_blank"
+                                    rel="noopener noreferrer">Whatsapp</a></li>
+                            <li><a href="https://instagram.com/shibilipalakkal_" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://github.com/shibiliaicreator-glitch/portfolio" target="_blank"
+                                    rel="noopener noreferrer">Github</a></li>
+                            <li><a href="https://www.linkedin.com/jobs/" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Shibili copy rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+
+        const currentTheme = sessionStorage.getItem('theme');
+        if (currentTheme === 'light-mode') {
+            document.body.classList.add('light-mode');
+            updateThemeIcon();
+        }
+
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.add('theme-transitioning');
+            document.body.classList.toggle('light-mode');
+
+            let theme = 'dark-mode';
+            if (document.body.classList.contains('light-mode')) {
+                theme = 'light-mode';
+            }
+
+            sessionStorage.setItem('theme', theme);
+            updateThemeIcon();
+
+            setTimeout(() => {
+                document.body.classList.remove('theme-transitioning');
+            }, 600);
+        });
+
+        function updateThemeIcon() {
+            if (document.body.classList.contains('light-mode')) {
+                themeIcon.textContent = '☀️';
+            } else {
+                themeIcon.textContent = '🌙';
+            }
+        }
+
+        // Hide Navbar when Footer is visible
+        const stickyNavbar = document.querySelector('.navbar');
+        const footerSection = document.querySelector('.footer-section');
+
+        if (stickyNavbar && footerSection) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        stickyNavbar.classList.add('navbar-hidden');
+                    } else {
+                        stickyNavbar.classList.remove('navbar-hidden');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            footerObserver.observe(footerSection);
+        }
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        // Slide to Connect Logic
+        document.querySelectorAll('.slide-action-btn').forEach(btn => {
+            const thumb = btn.querySelector('.slide-thumb');
+            const text = btn.querySelector('.slide-text');
+            let isDragging = false;
+            let startX = 0;
+            let maxTranslate = btn.clientWidth - thumb.clientWidth - 12; // 6px padding both sides
+            let currentTranslate = 0;
+
+            const handleStart = (e) => {
+                isDragging = true;
+                startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                thumb.style.transition = 'none';
+                text.style.transition = 'none';
+            };
+
+            const handleMove = (e) => {
+                if (!isDragging) return;
+                let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                let diff = clientX - startX;
+                currentTranslate = Math.max(0, Math.min(diff, maxTranslate));
+                thumb.style.transform = `translateX(${currentTranslate}px)`;
+
+                // Add blur and opacity drop based on progress
+                let progress = currentTranslate / maxTranslate;
+                text.style.opacity = 1 - progress;
+                text.style.filter = `blur(${progress * 10}px)`;
+
+                if (currentTranslate >= maxTranslate - 5) {
+                    isDragging = false;
+                    btn.classList.add('success');
+                    document.body.classList.add('page-leaving');
+                    setTimeout(() => {
+                        window.location.href = 'contact.html';
+                    }, 400);
+                }
+            };
+
+            const handleEnd = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                thumb.style.transition = 'transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                text.style.transition = 'opacity 0.4s ease, filter 0.4s ease';
+                if (currentTranslate < maxTranslate - 5) {
+                    currentTranslate = 0;
+                    thumb.style.transform = `translateX(0px)`;
+                    text.style.opacity = 1;
+                    text.style.filter = `blur(0px)`;
+                }
+            };
+
+            thumb.addEventListener('mousedown', handleStart);
+            thumb.addEventListener('touchstart', handleStart, { passive: true });
+
+            window.addEventListener('mousemove', handleMove);
+            window.addEventListener('touchmove', handleMove, { passive: true });
+
+            window.addEventListener('mouseup', handleEnd);
+            window.addEventListener('touchend', handleEnd);
+        });
+
+        // Page Transition Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const target = this.getAttribute('href');
+
+                    if (target.startsWith('http') || target.startsWith('#') || target === '') return;
+                    if (this.getAttribute('target') === '_blank') return;
+
+                    e.preventDefault();
+                    document.body.classList.add('page-leaving');
+
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

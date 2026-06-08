@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track My Spend - UX Case Study</title>
+    <meta name="color-scheme" content="dark">
+    <meta name="description"
+        content="Detailed UX design, research, wireframes, and transaction user flows for the Track My Spend personal finance application.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/Group 1.png" type="image/x-icon">
+    <style>
+        /* Disable Navbar logo hover text for detail pages */
+        .logo::after {
+            display: none !important;
+        }
+
+        /* Professional Smaller Typography Sizing */
+        .huge-title {
+            font-size: clamp(2.5rem, 8vw, 5.5rem) !important;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-hero {
+            text-align: center;
+            margin-top: 10vh;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        .case-desc {
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+            font-size: 0.95rem !important;
+            line-height: 1.6;
+            color: #b0b0b0;
+            font-weight: 300;
+        }
+
+        body.light-mode .case-desc,
+        body.light-mode .case-desc p {
+            color: #1e293b;
+        }
+
+        /* Section Headings */
+        .section-title {
+            font-size: 1.25rem !important;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            color: #ffffff;
+            margin: 3.5rem 0 1.5rem 0;
+            text-align: left;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        body.light-mode .section-title {
+            color: #0f172a;
+            border-bottom-color: rgba(0, 0, 0, 0.08);
+        }
+
+        /* Layout Grid and Cards */
+        .ux-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .ux-overview-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 2.2rem 2.2rem 2.2rem 2.5rem;
+            text-align: left;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto 2.5rem auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ux-overview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, rgba(90, 20, 180, 0.95) 0%, #00c3ff 100%);
+        }
+
+        .ux-overview-card:hover {
+            border-top-color: rgba(90, 20, 180, 0.4);
+            border-right-color: rgba(79, 70, 229, 0.4);
+            border-bottom-color: rgba(0, 195, 255, 0.4);
+            border-left-color: transparent;
+            box-shadow: 0 15px 50px rgba(90, 20, 180, 0.06), 0 15px 50px rgba(0, 195, 255, 0.06);
+        }
+
+        .ux-overview-card h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .ux-overview-card p {
+            color: #d1d5db;
+            font-size: clamp(0.95rem, 2vw, 1.15rem) !important;
+            line-height: 1.7 !important;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .ux-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .ux-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .ux-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .ux-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .ux-grid-2 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .ux-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: left;
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+            will-change: transform;
+        }
+
+        .ux-card p {
+            color: #d1d5db;
+            font-size: 0.9rem !important;
+            line-height: 1.6 !important;
+            font-weight: 300;
+            margin: 0 0 1.2rem 0;
+        }
+
+        .ux-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .ux-card h3 {
+            font-size: 1.05rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .ux-card ul,
+        .ux-card ol {
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+
+        .ux-card li {
+            color: #a0a0a0;
+            font-size: 0.85rem !important;
+            line-height: 1.5;
+            margin-bottom: 0.6rem;
+            font-weight: 300;
+        }
+
+        .ux-card li strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Personas Section */
+        .persona-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .persona-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .persona-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .persona-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .persona-header {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .persona-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 15%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .persona-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .persona-meta h4 {
+            font-size: 1.05rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            color: #fff;
+            margin: 0;
+        }
+
+        .persona-meta p {
+            font-size: 0.82rem !important;
+            color: #888888;
+            margin: 0;
+        }
+
+        .persona-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .persona-subsection h5 {
+            font-size: 0.85rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .persona-subsection ul {
+            padding-left: 1.1rem;
+            margin: 0;
+        }
+
+        .persona-subsection li {
+            font-size: 0.8rem !important;
+            color: #a0a0a0;
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
+        }
+
+        /* User Flow Section */
+        .user-flow-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .user-flow-img {
+            width: 100%;
+            max-width: 850px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Custom Wireframe Grid (4 per row override) */
+        .case-images {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 2.5rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 5rem;
+        }
+
+        @media (max-width: 900px) {
+            .case-images {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .case-images {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+        }
+
+        .case-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            will-change: transform, opacity, box-shadow;
+        }
+
+        .case-images img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .wireframe-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .wireframe-caption {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            margin-top: 0.25rem;
+        }
+
+        /* Light Mode Theme Overrides */
+        body.light-mode .ux-card,
+        body.light-mode .persona-card {
+            background: rgba(0, 0, 0, 0.01);
+            border-color: rgba(0, 0, 0, 0.08);
+            color: #1e293b;
+        }
+
+        body.light-mode .ux-overview-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.005) 100%);
+            border-color: rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.light-mode .ux-overview-card::before {
+            background: linear-gradient(to bottom, rgba(37, 99, 235, 0.9) 0%, #3b82f6 100%);
+        }
+
+        body.light-mode .ux-overview-card:hover {
+            border-top-color: rgba(37, 99, 235, 0.3);
+            border-right-color: rgba(59, 130, 246, 0.3);
+            border-bottom-color: rgba(59, 130, 246, 0.3);
+            border-left-color: transparent;
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.08);
+        }
+
+        body.light-mode .ux-card:hover {
+            background-color: #ffffff;
+            border-color: rgba(0, 0, 0, 0.12);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        body.light-mode .ux-card h3,
+        body.light-mode .ux-overview-card h3,
+        body.light-mode .persona-meta h4,
+        body.light-mode .persona-subsection h5 {
+            color: #0f172a;
+        }
+
+        body.light-mode .ux-card li,
+        body.light-mode .ux-card p,
+        body.light-mode .ux-overview-card p,
+        body.light-mode .persona-meta p,
+        body.light-mode .persona-subsection li {
+            color: #334155;
+        }
+
+        body.light-mode .ux-card li strong {
+            color: #0f172a;
+        }
+
+        body.light-mode .persona-img {
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .case-images img,
+        body.light-mode .user-flow-img {
+            border-color: rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        body.light-mode .wireframe-caption {
+            color: #334155;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="track-my-spend.html" class="logo" aria-label="Back to Overview">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
+        <ul class="nav-links">
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Header -->
+        <section class="case-study-hero">
+            <h1 class="huge-title shiny-text">TRACK MY SPEND</h1>
+            <p class="split-subtitle">UX Design Case Study</p>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="ux-section" style="align-items: center; text-align: center;">
+            <div class="ux-overview-card">
+                <h3>Project Overview</h3>
+                <p>Track My Spend is an app that helps people manage their finances. It shows users where their money
+                    goes each month. Apps, like Google Pay, PhonePe and Paytm let users see their transaction history.
+                    They do not give a clear idea of how much is spent on different things. This project helps users
+                    track their expenses automatically. It also helps them understand their spending habits. The goal is
+                    to help users make financial decisions. It gives users insights into their spending. Suggests ways
+                    to improve. My job was to find out the challenges people face while spending. I had to identify the
+                    problems users face and design a way for them to track their expenses.</p>
+            </div>
+        </section>
+
+        <!-- Problems, Design Process & Solution -->
+        <section class="ux-section">
+            <h3 class="section-title">Core Strategy</h3>
+            <div class="ux-grid">
+                <!-- Problems Card -->
+                <div class="ux-card">
+                    <h3>Problems</h3>
+                    <ol>
+                        <li><strong>Spending Awareness Gap</strong> – People can see transactions but cannot easily
+                            understand where most of their money is spent.</li>
+                        <li><strong>No Category-Based Tracking</strong> – It's hard to figure out what people spending
+                            on things, like: Food, Shopping, Bills, Transport, Others.</li>
+                        <li><strong>Over Spending Without Realization</strong> – People often exceed budgets before
+                            realizing it.</li>
+                        <li><strong>Poor Saving Habits</strong> – If people don't know where their money is going, they
+                            miss opportunities to save.</li>
+                    </ol>
+                </div>
+
+                <!-- Design Process Card -->
+                <div class="ux-card">
+                    <h3>Design Process</h3>
+                    <ol>
+                        <li><strong>Research</strong> – I start by trying to get an understanding of how people spend
+                            their money and what financial challenges they face.</li>
+                        <li><strong>User Interviews</strong> – Next I talk to people who actively use UPI to gather
+                            insights, from their experiences.</li>
+                        <li><strong>Wireframing</strong> – Then I create layouts of the screens to visualize the apps
+                            structure.</li>
+                        <li><strong>UI Design</strong> – After that I design interfaces that are easy to use and look
+                            clean.</li>
+                        <li><strong>Prototyping</strong> – Finally I build interactive flows for testing.</li>
+                    </ol>
+                </div>
+
+                <!-- Solution Card -->
+                <div class="ux-card">
+                    <h3>Solution</h3>
+                    <p><strong>Smart UPI-Based Expense Tracking</strong></p>
+                    <ol>
+                        <li><strong>Connect UPI Apps</strong> – Google Pay, PhonePe, Paytm, Amazon Pay. The system
+                            automatically sorts users expenses into categories: Food, Shopping, Travel, Bills,
+                            Healthcare, Entertainment.</li>
+                        <li><strong>Monthly Spending Dashboard</strong> – Users can see how much they spend each month
+                            with Monthly Spending Dashboard, It provides a picture of their expenses.</li>
+                        <li><strong>Visual spending reports</strong> – This help users understand where their money is
+                            being spent</li>
+                        <li><strong>Budget Monitoring</strong> – Track users spending limits with budget monitoring,
+                            helping them avoid overspending.</li>
+                        <li><strong>Behaviour Insights</strong> – It shows users how their spending habits affect their
+                            savings</li>
+                        <li><strong>Personalized Saving Suggestions</strong> – These suggestions help users find ways to
+                            cut down on expenses</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience, Goals & Research Insights -->
+        <section class="ux-section">
+            <h3 class="section-title">User Research & Goals</h3>
+            <div class="ux-grid">
+                <!-- Target Audience -->
+                <div class="ux-card">
+                    <h3>Target Audience</h3>
+                    <ol>
+                        <li><strong>Salaried Employees</strong> – They want to manage their income and expenses better.
+                        </li>
+                        <li><strong>College Students</strong> – They want to handle their pocket money in a way.</li>
+                        <li><strong>Families</strong> – They want to see where their household spending goes</li>
+                        <li><strong>Freelancers & Self-Employed Users</strong> – They need an easy way to track their
+                            finances without using complicated accounting tools</li>
+                    </ol>
+                </div>
+
+                <!-- Goals -->
+                <div class="ux-card">
+                    <h3>Goals</h3>
+                    <ul>
+                        <li>Increase spending awareness</li>
+                        <li>Simplify expense tracking</li>
+                        <li>Promote healthy saving habits</li>
+                        <li>Help users make better financial decisions</li>
+                    </ul>
+                </div>
+
+                <!-- User Research Insights -->
+                <div class="ux-card">
+                    <h3>User Research Insights</h3>
+                    <ul>
+                        <li><strong>Method</strong>: Online Research (Reviewed: Expense tracking apps, Personal finance
+                            articles, User reviews) and Informal Interviews (Interviewed 5–8 friends and family members
+                            who use UPI).</li>
+                        <li><strong>Participants</strong>:
+                            <ul>
+                                <li>3 Salaried Employees (They struggle to save money every month).</li>
+                                <li>2 College Students (They manage their allowances).</li>
+                                <li>2 Family Budget Managers (They track household expenses).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Insights</strong>:
+                            <ul>
+                                <li>Most people know how much they spend, but they don't know where they spend it.</li>
+                                <li>People rarely look at their transaction history.</li>
+                                <li>Food delivery and online shopping are major spending categories.</li>
+                                <li>People want insights, not complex financial reports.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Personas -->
+        <section class="ux-section">
+            <h3 class="section-title">User Personas</h3>
+            <div class="persona-grid">
+                <!-- Persona 1: Aflah -->
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <img src="img/spend_aflah.png" alt="Aflah Portrait" class="persona-img">
+                        <div class="persona-meta">
+                            <h4>Aflah</h4>
+                            <p>Age: 29 &bull; Office Employee</p>
+                        </div>
+                    </div>
+                    <div class="persona-details">
+                        <div class="persona-subsection">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>They want to know where their monthly salary goes.</li>
+                                <li>They need to keep track of their spending and save money.</li>
+                            </ul>
+                        </div>
+                        <div class="persona-subsection">
+                            <h5>Pain Points</h5>
+                            <ul>
+                                <li>Their salary often runs out before the end of the month.</li>
+                                <li>They struggle to identify unnecessary expenses.</li>
+                            </ul>
+                        </div>
+                        <div class="persona-subsection">
+                            <h5>Quote</h5>
+                            <p
+                                style="font-size: 0.8rem; font-style: italic; color: #a0a0a0; margin: 0; line-height: 1.4;">
+                                "I know I spend money. I have no idea where it goes."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Persona 2: Gopika -->
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <img src="img/spend_gopika.png" alt="Gopika Portrait" class="persona-img">
+                        <div class="persona-meta">
+                            <h4>Gopika</h4>
+                            <p>Age: 21 &bull; College Student</p>
+                        </div>
+                    </div>
+                    <div class="persona-details">
+                        <div class="persona-subsection">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>They want to make better use of their allowance.</li>
+                                <li>They want to reduce their spending on food and shopping.</li>
+                            </ul>
+                        </div>
+                        <div class="persona-subsection">
+                            <h5>Pain Points</h5>
+                            <ul>
+                                <li>They make a lot of payments and do not keep track of them.</li>
+                                <li>They often run out of money before the end of the month.</li>
+                            </ul>
+                        </div>
+                        <div class="persona-subsection">
+                            <h5>Quote</h5>
+                            <p
+                                style="font-size: 0.8rem; font-style: italic; color: #a0a0a0; margin: 0; line-height: 1.4;">
+                                "I spend a little every day and suddenly my money is gone."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Persona 3: Ahammed Kutty -->
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <img src="img/hospital_sameer.png" alt="Ahammed Kutty Portrait" class="persona-img">
+                        <div class="persona-meta">
+                            <h4>Ahammed Kutty</h4>
+                            <p>Age: 42 &bull; Small Business Owner</p>
+                        </div>
+                    </div>
+                    <div class="persona-details">
+                        <div class="persona-subsection">
+                            <h5>Goals</h5>
+                            <ul>
+                                <li>They want to see how much money their household is spending.</li>
+                                <li>They want to create a budget for their family.</li>
+                            </ul>
+                        </div>
+                        <div class="persona-subsection">
+                            <h5>Pain Points</h5>
+                            <ul>
+                                <li>They do not know where their family's money is being spent.</li>
+                                <li>They find it difficult to save money because they do not know which expenses to
+                                    reduce.</li>
+                            </ul>
+                        </div>
+                        <div class="persona-subsection">
+                            <h5>Quote</h5>
+                            <p
+                                style="font-size: 0.8rem; font-style: italic; color: #a0a0a0; margin: 0; line-height: 1.4;">
+                                "I need one place to see all my familys expenses that would be great."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Flow -->
+        <section class="ux-section">
+            <h3 class="section-title">User Flow</h3>
+            <div class="user-flow-container">
+                <img src="Track%20My%20Spend/User%20Flow.png" alt="Track My Spend User Flow Chart"
+                    class="user-flow-img scroll-float">
+            </div>
+        </section>
+
+        <!-- Wireframes (4 in a Row Grid) -->
+        <section class="ux-section">
+            <h3 class="section-title">Wireframes</h3>
+            <div class="case-images">
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Splash%20wireframe%201.png" alt="Splash Screen Wireframe">
+                    <p class="wireframe-caption">Splash screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Onboarding%20wireframe%202.png" alt="Onboarding Wireframe">
+                    <p class="wireframe-caption">Onboarding screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Connecting%20UPI%20wireframe%203.png" alt="Connecting UPI Wireframe">
+                    <p class="wireframe-caption">Connecting upi screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Home%20screen%20Wireframe%204.png" alt="Home Dashboard Wireframe">
+                    <p class="wireframe-caption">Home screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Category%20Details%20wireframe%205.png"
+                        alt="Category Details Wireframe">
+                    <p class="wireframe-caption">Category details screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Monthly%20analytics%20wireframe%206.png"
+                        alt="Monthly Analytics Wireframe">
+                    <p class="wireframe-caption">Insights(Monthly Analytics) Screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Monthly%20comparision%20wireframe%207.png"
+                        alt="Monthly Comparison Wireframe">
+                    <p class="wireframe-caption">insights (Monthly coparision) Screen</p>
+                </div>
+                <div class="wireframe-item scroll-float">
+                    <img src="Track%20My%20Spend/Budget%20and%20goal%20wireframe%208.png" alt="Budget & Goal Wireframe">
+                    <p class="wireframe-caption">Profile,Budget and goal screen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview, testing, learnings & final outcome -->
+        <section class="ux-section">
+            <h3 class="section-title">Overview</h3>
+            <div class="ux-grid-2">
+                <!-- Card 1: Key Features -->
+                <div class="ux-card scroll-float">
+                    <h3>Key Features</h3>
+                    <p>The Track My Spend app focuses on solving real financial awareness problems with simple,
+                        automatic features:</p>
+                    <ul>
+                        <li><strong>Automatic UPI Category Sorting:</strong> Connects to UPI applications and
+                            categorizes expenses (Food, Shopping, Travel, Bills, Healthcare, Entertainment)
+                            automatically.</li>
+                        <li><strong>Monthly Spending Dashboard:</strong> Real-time visual spending charts that provide a
+                            clean picture of user expenditures.</li>
+                        <li><strong>Budget Monitoring & Alerts:</strong> Visual progress tracking of limits, helping
+                            users prevent overspending.</li>
+                        <li><strong>Personalized Saving Suggestions:</strong> Smart behavior insights to help users find
+                            actionable ways to save.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Usability Testing -->
+                <div class="ux-card scroll-float">
+                    <h3>Usability Testing</h3>
+                    <p>Usability testing was conducted with a small group of regular UPI users representing the target
+                        personas. Feedback highlighted that:</p>
+                    <ul>
+                        <li>Users prefer automatic categorization over manual input, as it encourages users to keep
+                            using the app regularly.</li>
+                        <li>Users noticed their spending more often because of the alerts, the alerts helped them stay
+                            aware of their expenses.</li>
+                        <li>Users found salary-based insights helpful, the insights helped them better understand their
+                            spending habits.</li>
+                        <li>Users felt confident connecting their UPI accounts because the connection was secure and
+                            only transaction data was accessed.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Learnings -->
+                <div class="ux-card scroll-float">
+                    <h3>Learnings</h3>
+                    <p>This app gave me valuable user experience lessons:</p>
+                    <ul>
+                        <li>It became clear that users are more interested in understanding their spending than tracking
+                            transactions.</li>
+                        <li>it showed that users prefer insights over raw data.</li>
+                        <li>Recognized that tracking micro-transactions (small frequent spending) is the most critical
+                            feature for students and younger salaried workers.</li>
+                        <li>It shows that behavior-based designs lead to stronger user engagement.</li>
+                        <li>it showed that visual analytics help users make better decisions.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Final Outcome -->
+                <div class="ux-card scroll-float">
+                    <h3>Final Outcome</h3>
+                    <p>Track my spend transforms transaction history into meaningful financial insights. By combining
+                        UPI integration, automatic categorization, budget tracking, and behavior-drive recommendations,
+                        the app helps users build healthier spending habits and make smarter financial decisions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-marquee">
+            <h2 class="massive-text">let's connect</h2>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3><span class="text-gray">Ready to create something</span><br><strong>awesome together?</strong>
+                    </h3>
+                    <div class="slide-action-btn">
+                        <div class="slide-track">
+                            <span class="slide-text">Slide to contact</span>
+                            <div class="slide-thumb">&rarr;</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="link-column">
+                        <span class="column-title">Pages</span>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-column">
+                        <span class="column-title">Socials</span>
+                        <ul>
+                            <li><a href="https://wa.me/919497440438?text=Hello" target="_blank"
+                                    rel="noopener noreferrer">Whatsapp</a></li>
+                            <li><a href="https://instagram.com/shibilipalakkal_" target="_blank"
+                                    rel="noopener noreferrer">Instagram</a></li>
+                            <li><a href="https://github.com/shibiliaicreator-glitch/portfolio" target="_blank"
+                                    rel="noopener noreferrer">Github</a></li>
+                            <li><a href="https://www.linkedin.com/jobs/" target="_blank"
+                                    rel="noopener noreferrer">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Shibili copy rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sync Theme from Session Storage
+        const currentTheme = sessionStorage.getItem('theme');
+        if (currentTheme === 'light-mode') {
+            document.body.classList.add('light-mode');
+        }
+
+        // Hide Navbar when Footer is visible
+        const stickyNavbar = document.querySelector('.navbar');
+        const footerSection = document.querySelector('.footer-section');
+
+        if (stickyNavbar && footerSection) {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        stickyNavbar.classList.add('navbar-hidden');
+                    } else {
+                        stickyNavbar.classList.remove('navbar-hidden');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            footerObserver.observe(footerSection);
+        }
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Slide to Connect Logic
+        document.querySelectorAll('.slide-action-btn').forEach(btn => {
+            const thumb = btn.querySelector('.slide-thumb');
+            const text = btn.querySelector('.slide-text');
+            let isDragging = false;
+            let startX = 0;
+            let maxTranslate = btn.clientWidth - thumb.clientWidth - 12; // 6px padding both sides
+            let currentTranslate = 0;
+
+            const handleStart = (e) => {
+                isDragging = true;
+                startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                thumb.style.transition = 'none';
+                text.style.transition = 'none';
+            };
+
+            const handleMove = (e) => {
+                if (!isDragging) return;
+                let clientX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                let diff = clientX - startX;
+                currentTranslate = Math.max(0, Math.min(diff, maxTranslate));
+                thumb.style.transform = `translateX(${currentTranslate}px)`;
+
+                let progress = currentTranslate / maxTranslate;
+                text.style.opacity = 1 - progress;
+                text.style.filter = `blur(${progress * 10}px)`;
+
+                if (currentTranslate >= maxTranslate - 5) {
+                    isDragging = false;
+                    btn.classList.add('success');
+                    document.body.classList.add('page-leaving');
+                    setTimeout(() => {
+                        window.location.href = 'contact.html';
+                    }, 400);
+                }
+            };
+
+            const handleEnd = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                thumb.style.transition = 'transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
+                text.style.transition = 'opacity 0.4s ease, filter 0.4s ease';
+                if (currentTranslate < maxTranslate - 5) {
+                    currentTranslate = 0;
+                    thumb.style.transform = `translateX(0px)`;
+                    text.style.opacity = 1;
+                    text.style.filter = `blur(0px)`;
+                }
+            };
+
+            thumb.addEventListener('mousedown', handleStart);
+            thumb.addEventListener('touchstart', handleStart, { passive: true });
+            window.addEventListener('mousemove', handleMove);
+            window.addEventListener('touchmove', handleMove, { passive: true });
+            window.addEventListener('mouseup', handleEnd);
+            window.addEventListener('touchend', handleEnd);
+        });
+
+        // Page Transition Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const target = this.getAttribute('href');
+                    if (target.startsWith('http') || target.startsWith('#') || target === '') return;
+                    if (this.getAttribute('target') === '_blank') return;
+                    e.preventDefault();
+                    document.body.classList.add('page-leaving');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 400);
+                });
+            });
+        });
+
+        // Scroll Float Animation
+        const scrollFloatElements = document.querySelectorAll('.scroll-float');
+        if (scrollFloatElements.length > 0) {
+            const scrollFloatObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, (index % 3) * 100);
+                        scrollFloatObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            scrollFloatElements.forEach((el) => scrollFloatObserver.observe(el));
+        }
+
+        // Blur Text Animation for Description (Word by Word)
+        const caseDescP = document.querySelector('.case-desc p');
+        if (caseDescP) {
+            const text = caseDescP.innerHTML.trim();
+            const words = text.split(/\s+/);
+            caseDescP.innerHTML = '';
+            const allBlurWords = [];
+
+            words.forEach((word, index) => {
+                const wordSpan = document.createElement('span');
+                wordSpan.className = 'blur-char';
+                wordSpan.innerHTML = word;
+                wordSpan.style.animationDelay = `${index * 0.04}s`;
+
+                allBlurWords.push(wordSpan);
+                caseDescP.appendChild(wordSpan);
+
+                if (index < words.length - 1) {
+                    caseDescP.appendChild(document.createTextNode(' '));
+                }
+            });
+
+            setTimeout(() => {
+                allBlurWords.forEach(w => w.classList.add('animate'));
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>
